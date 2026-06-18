@@ -6,6 +6,7 @@
 <title>Lugar Secreto</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+<script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 
@@ -259,10 +260,10 @@ nav{
   padding:28px 20px;
 }
 .detail-num{
-  font-family:'Playfair Display',serif;
-  font-size:2.4rem;font-style:italic;
   color:var(--clay);line-height:1;margin-bottom:6px;
+  display:flex;align-items:center;
 }
+.detail-num svg{width:2rem;height:2rem;stroke:var(--clay);stroke-width:1.5;fill:none;}
 .detail-label{
   font-size:0.68rem;font-weight:500;
   letter-spacing:0.1em;text-transform:uppercase;
@@ -492,7 +493,10 @@ nav{
 .price-note{
   font-size:0.75rem;font-weight:300;
   color:rgba(255,255,255,0.5);line-height:1.7;
+  display:flex;align-items:center;gap:6px;
 }
+.price-note svg{width:13px;height:13px;stroke:currentColor;stroke-width:1.5;fill:none;flex-shrink:0;}
+.hero-meta span svg{width:12px;height:12px;stroke:currentColor;stroke-width:1.8;fill:none;vertical-align:-1px;margin-right:4px;}
 
 /* ── PHONE / DDI ── */
 .phone-wrap{
@@ -657,9 +661,9 @@ footer{
     <h1 class="hero-h1">Lugar<em>Secreto</em></h1>
     <p class="hero-sub">Para mulheres que desejam romper padrões, desbloquear aquilo que as impede de avançar e alinhar-se com a vida que realmente desejam viver.<br><br>Existe uma versão mais segura, leve, feminina e confiante dentro de ti.<br><br>Talvez este seja o momento de lhe dar espaço para existir.</p>
     <div class="hero-meta">
-      <span>📅 10 e 11 de Outubro</span>
-      <span>📍 [Inserir Local]</span>
-      <span>👥 Vagas Limitadas</span>
+      <span><i data-lucide="calendar"></i>10 e 11 de Outubro</span>
+      <span><i data-lucide="map-pin"></i>[Inserir Local]</span>
+      <span><i data-lucide="users"></i>Vagas Limitadas</span>
     </div>
     <a href="#cta" class="btn btn-solid">Quero Garantir a Minha Vaga</a>
   </div>
@@ -720,19 +724,19 @@ footer{
 <!-- NÚMEROS -->
 <section class="details">
   <div class="detail-item">
-    <div class="detail-num">📅</div>
+    <div class="detail-num"><i data-lucide="calendar"></i></div>
     <div class="detail-label">10 e 11 de Outubro</div>
   </div>
   <div class="detail-item">
-    <div class="detail-num">⏰</div>
+    <div class="detail-num"><i data-lucide="clock"></i></div>
     <div class="detail-label">Sáb. 09h00 – Dom. 16h00</div>
   </div>
   <div class="detail-item">
-    <div class="detail-num">📍</div>
+    <div class="detail-num"><i data-lucide="map-pin"></i></div>
     <div class="detail-label">Quinta exclusiva<br>[Inserir local]</div>
   </div>
   <div class="detail-item">
-    <div class="detail-num">👥</div>
+    <div class="detail-num"><i data-lucide="users"></i></div>
     <div class="detail-label">Vagas Limitadas</div>
   </div>
 </section>
@@ -743,28 +747,28 @@ footer{
   <h2 class="section-h2">Tudo pensado para <em>ti</em></h2>
   <div class="exp-cards">
     <div class="exp-card">
-      <div class="exp-n">✔</div>
+      <div class="exp-n">01</div>
       <div>
         <h3>Hospedagem</h3>
         <p>Espaço exclusivo, cuidadosamente preparado para acolhimento, conforto e privacidade.</p>
       </div>
     </div>
     <div class="exp-card">
-      <div class="exp-n">✔</div>
+      <div class="exp-n">02</div>
       <div>
         <h3>Todas as refeições</h3>
         <p>Alimentação completa durante toda a imersão, pensada ao detalhe para nutrir corpo e mente.</p>
       </div>
     </div>
     <div class="exp-card">
-      <div class="exp-n">✔</div>
+      <div class="exp-n">03</div>
       <div>
         <h3>Materiais da experiência</h3>
         <p>Todos os materiais necessários para acompanhar e registar a tua jornada ao longo dos dois dias.</p>
       </div>
     </div>
     <div class="exp-card">
-      <div class="exp-n">✔</div>
+      <div class="exp-n">04</div>
       <div>
         <h3>Acompanhamento completo</h3>
         <p>Apoio e presença durante toda a imersão, para que te sintas segura e acolhida em cada momento.</p>
@@ -846,7 +850,7 @@ footer{
     <p class="section-body">Existe um lugar dentro de ti que conhece a mulher que nasceste para ser. Talvez esteja na hora de a encontrares.</p>
     <div class="price-block">
       <span class="price-value">397€</span>
-      <p class="price-note">✨ Possibilidade de pagamento faseado até à data da imersão.</p>
+      <p class="price-note"><i data-lucide="star"></i>Possibilidade de pagamento faseado até à data da imersão.</p>
     </div>
     <p class="section-body" style="font-size:0.75rem;margin-bottom:24px">As vagas são limitadas para garantir profundidade, proximidade e qualidade da experiência para cada participante.</p>
     <div class="field">
@@ -861,16 +865,16 @@ footer{
       <label>WhatsApp</label>
       <div class="phone-wrap">
         <select class="ddi-select" id="ddi">
-          <option value="+351">🇵🇹 +351</option>
-          <option value="+55">🇧🇷 +55</option>
-          <option value="+34">🇪🇸 +34</option>
-          <option value="+44">🇬🇧 +44</option>
-          <option value="+33">🇫🇷 +33</option>
-          <option value="+49">🇩🇪 +49</option>
-          <option value="+1">🇺🇸 +1</option>
-          <option value="+39">🇮🇹 +39</option>
-          <option value="+31">🇳🇱 +31</option>
-          <option value="+41">🇨🇭 +41</option>
+          <option value="+351">PT +351</option>
+          <option value="+55">BR +55</option>
+          <option value="+34">ES +34</option>
+          <option value="+44">UK +44</option>
+          <option value="+33">FR +33</option>
+          <option value="+49">DE +49</option>
+          <option value="+1">US +1</option>
+          <option value="+39">IT +39</option>
+          <option value="+31">NL +31</option>
+          <option value="+41">CH +41</option>
           <option value="+351" disabled>──────</option>
           <option value="outro">Outro...</option>
         </select>
@@ -908,6 +912,7 @@ footer{
 </div>
 
 <script>
+lucide.createIcons();
 (function(){
   var banner = document.getElementById('cookie-banner');
   var check  = document.getElementById('cookie-consent-check');
