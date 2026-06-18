@@ -1,1 +1,0 @@
-# lugarsecreto_lp

@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Política de Cookies — Lugar Secreto</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --bg:#FAF6F2;--clay:#B4765A;--dark:#3A2820;
+  --warm:#5A4337;--gold:#C9A27E;--light:#F3EAE2;--muted:#8A7060;
+}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--dark);font-family:'Montserrat',sans-serif;-webkit-font-smoothing:antialiased}
+
+nav{
+  position:sticky;top:0;z-index:99;
+  display:flex;align-items:center;justify-content:space-between;
+  padding:0 24px;height:56px;
+  background:rgba(250,246,242,0.95);
+  backdrop-filter:blur(16px);
+  border-bottom:1px solid rgba(180,118,90,0.12);
+}
+.nav-logo{font-family:'Playfair Display',serif;font-size:1rem;font-style:italic;color:var(--dark)}
+.nav-logo span{color:var(--clay)}
+.nav-back{
+  font-size:0.62rem;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;
+  color:var(--clay);text-decoration:none;
+}
+.nav-back:hover{text-decoration:underline}
+
+.page-wrap{max-width:740px;margin:0 auto;padding:56px 28px 80px}
+
+.page-title{
+  font-family:'Playfair Display',serif;
+  font-size:clamp(2rem,6vw,3rem);font-weight:400;font-style:italic;
+  color:var(--dark);line-height:1.15;margin-bottom:8px;
+}
+.page-date{
+  font-size:0.65rem;font-weight:500;letter-spacing:0.14em;text-transform:uppercase;
+  color:var(--muted);margin-bottom:40px;display:block;
+}
+.divider{width:40px;height:2px;background:var(--clay);margin-bottom:40px}
+
+h2{
+  font-family:'Playfair Display',serif;font-size:1.15rem;font-style:italic;
+  font-weight:400;color:var(--clay);margin:36px 0 10px;
+}
+p,li{font-size:0.85rem;font-weight:300;line-height:1.9;color:var(--muted);margin-bottom:10px}
+ul{padding-left:20px;margin-bottom:10px}
+li{margin-bottom:4px}
+a{color:var(--clay);text-decoration:underline}
+strong{font-weight:600;color:var(--warm)}
+
+/* Cookie table */
+.cookie-table{width:100%;border-collapse:collapse;margin:16px 0 24px;font-size:0.78rem}
+.cookie-table th{
+  text-align:left;padding:10px 12px;
+  background:var(--light);color:var(--warm);
+  font-weight:600;letter-spacing:0.08em;text-transform:uppercase;
+  font-size:0.62rem;border-bottom:2px solid rgba(180,118,90,0.2);
+}
+.cookie-table td{
+  padding:10px 12px;vertical-align:top;
+  border-bottom:1px solid rgba(180,118,90,0.12);
+  color:var(--muted);font-weight:300;line-height:1.7;
+}
+.cookie-table tr:last-child td{border-bottom:none}
+
+/* Preference panel */
+.pref-panel{
+  background:var(--light);border:1px solid rgba(180,118,90,0.2);
+  padding:24px;margin:28px 0;
+}
+.pref-panel h3{
+  font-family:'Playfair Display',serif;font-size:1rem;font-style:italic;
+  color:var(--dark);margin-bottom:16px;font-weight:400;
+}
+.pref-row{
+  display:flex;align-items:flex-start;justify-content:space-between;
+  gap:16px;padding:14px 0;
+  border-bottom:1px solid rgba(180,118,90,0.12);
+}
+.pref-row:last-child{border-bottom:none;padding-bottom:0}
+.pref-info{flex:1}
+.pref-name{font-size:0.8rem;font-weight:600;color:var(--dark);margin-bottom:3px}
+.pref-desc{font-size:0.72rem;font-weight:300;color:var(--muted);line-height:1.6}
+.toggle{
+  position:relative;display:inline-block;
+  width:42px;height:24px;flex-shrink:0;margin-top:2px;
+}
+.toggle input{opacity:0;width:0;height:0}
+.slider{
+  position:absolute;inset:0;
+  background:rgba(180,118,90,0.3);cursor:pointer;
+  border-radius:24px;transition:background 0.25s;
+}
+.slider:before{
+  content:'';position:absolute;
+  width:18px;height:18px;left:3px;bottom:3px;
+  background:#fff;border-radius:50%;
+  transition:transform 0.25s;
+}
+.toggle input:checked + .slider{background:var(--clay)}
+.toggle input:checked + .slider:before{transform:translateX(18px)}
+.toggle input:disabled + .slider{opacity:0.5;cursor:not-allowed}
+.pref-save-btn{
+  margin-top:20px;
+  background:var(--clay);color:#fff;
+  border:none;cursor:pointer;
+  font-family:'Montserrat',sans-serif;
+  font-size:0.65rem;font-weight:600;
+  letter-spacing:0.14em;text-transform:uppercase;
+  padding:12px 28px;
+  transition:background 0.25s;
+}
+.pref-save-btn:hover{background:var(--warm)}
+.pref-saved{
+  display:none;font-size:0.7rem;color:var(--clay);
+  margin-top:10px;font-weight:500;
+}
+
+footer{
+  background:var(--dark);border-top:1px solid rgba(180,118,90,0.15);
+  padding:28px;text-align:center;
+}
+footer p{font-size:0.6rem;font-weight:300;letter-spacing:0.1em;text-transform:uppercase;color:rgba(255,255,255,0.25)}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-logo">Lugar <span>Secreto</span></div>
+  <a href="index2.html" class="nav-back">← Voltar</a>
+</nav>
+
+<div class="page-wrap">
+  <h1 class="page-title">Política de Cookies</h1>
+  <span class="page-date">Última atualização: Junho de 2025</span>
+  <div class="divider"></div>
+
+  <p>Este site utiliza cookies e tecnologias semelhantes para melhorar a tua experiência de navegação, analisar o tráfego e, mediante consentimento, personalizar conteúdos. Esta política explica o que são cookies, como os utilizamos e como podes gerir as tuas preferências, em conformidade com a Diretiva ePrivacy e o RGPD.</p>
+
+  <h2>1. O que são Cookies?</h2>
+  <p>Cookies são pequenos ficheiros de texto guardados no teu dispositivo quando visitas um site. Permitem que o site reconheça o teu dispositivo em visitas futuras e recorde determinadas preferências ou ações.</p>
+
+  <h2>2. Tipos de Cookies que Utilizamos</h2>
+
+  <table class="cookie-table">
+    <thead>
+      <tr>
+        <th>Tipo</th>
+        <th>Nome / Origem</th>
+        <th>Finalidade</th>
+        <th>Duração</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>Essenciais</strong></td>
+        <td>cookieConsent (localStorage)</td>
+        <td>Guarda a tua escolha de consentimento de cookies</td>
+        <td>1 ano</td>
+      </tr>
+      <tr>
+        <td><strong>Funcionais</strong></td>
+        <td>Preferências de idioma / sessão</td>
+        <td>Lembrar as tuas preferências durante a navegação</td>
+        <td>Sessão</td>
+      </tr>
+      <tr>
+        <td><strong>Analíticos</strong></td>
+        <td>Google Analytics (_ga, _gid)</td>
+        <td>Medir o tráfego e comportamento dos utilizadores de forma anónima</td>
+        <td>Até 2 anos</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <p><strong>Nota:</strong> Os cookies essenciais são necessários para o funcionamento básico do site e não podem ser desativados. Todos os outros requerem o teu consentimento.</p>
+
+  <h2>3. Gerir as Tuas Preferências</h2>
+  <p>Podes ajustar as tuas preferências a qualquer momento abaixo:</p>
+
+  <div class="pref-panel">
+    <h3>Preferências de Cookies</h3>
+
+    <div class="pref-row">
+      <div class="pref-info">
+        <p class="pref-name">Cookies Essenciais</p>
+        <p class="pref-desc">Necessários para o funcionamento do site. Não podem ser desativados.</p>
+      </div>
+      <label class="toggle">
+        <input type="checkbox" checked disabled>
+        <span class="slider"></span>
+      </label>
+    </div>
+
+    <div class="pref-row">
+      <div class="pref-info">
+        <p class="pref-name">Cookies Funcionais</p>
+        <p class="pref-desc">Permitem que o site recorde as tuas preferências para uma melhor experiência.</p>
+      </div>
+      <label class="toggle">
+        <input type="checkbox" id="pref-functional">
+        <span class="slider"></span>
+      </label>
+    </div>
+
+    <div class="pref-row">
+      <div class="pref-info">
+        <p class="pref-name">Cookies Analíticos</p>
+        <p class="pref-desc">Ajudam-nos a perceber como os visitantes interagem com o site, de forma anónima.</p>
+      </div>
+      <label class="toggle">
+        <input type="checkbox" id="pref-analytics">
+        <span class="slider"></span>
+      </label>
+    </div>
+
+    <button class="pref-save-btn" id="save-prefs">Guardar preferências</button>
+    <p class="pref-saved" id="saved-msg">✓ Preferências guardadas.</p>
+  </div>
+
+  <h2>4. Cookies de Terceiros</h2>
+  <p>Poderemos incorporar conteúdos ou ferramentas de terceiros (ex: Google Analytics, Meta Pixel) que colocam os seus próprios cookies. Não temos controlo sobre esses cookies — recomendamos que consultes as políticas de privacidade das respetivas plataformas.</p>
+
+  <h2>5. Como Eliminar ou Bloquear Cookies</h2>
+  <p>Podes controlar e/ou eliminar cookies diretamente nas definições do teu navegador:</p>
+  <ul>
+    <li><strong>Chrome:</strong> Definições → Privacidade e segurança → Cookies</li>
+    <li><strong>Safari:</strong> Preferências → Privacidade</li>
+    <li><strong>Firefox:</strong> Opções → Privacidade e segurança</li>
+    <li><strong>Edge:</strong> Definições → Cookies e permissões do site</li>
+  </ul>
+  <p>Atenção: bloquear todos os cookies pode afetar o funcionamento de algumas funcionalidades do site.</p>
+
+  <h2>6. Alterações a Esta Política</h2>
+  <p>Podemos atualizar esta Política de Cookies periodicamente para refletir alterações nas tecnologias utilizadas ou na legislação aplicável. A data da última atualização é indicada no topo deste documento.</p>
+
+  <h2>7. Contacto</h2>
+  <p>Para qualquer questão relacionada com cookies ou privacidade: <a href="mailto:[inserir e-mail]">[inserir e-mail]</a></p>
+  <p>Ver também a nossa <a href="politica-privacidade.html">Política de Privacidade</a>.</p>
+</div>
+
+<footer>
+  <p>© 2025 Lugar Secreto — Todos os direitos reservados</p>
+</footer>
+
+<script>
+(function(){
+  var fnCheck = document.getElementById('pref-functional');
+  var anCheck = document.getElementById('pref-analytics');
+  var saveBtn = document.getElementById('save-prefs');
+  var savedMsg = document.getElementById('saved-msg');
+
+  var prefs = JSON.parse(localStorage.getItem('cookiePrefs') || '{}');
+  if(prefs.functional) fnCheck.checked = true;
+  if(prefs.analytics)  anCheck.checked = true;
+
+  saveBtn.addEventListener('click', function(){
+    localStorage.setItem('cookiePrefs', JSON.stringify({
+      functional: fnCheck.checked,
+      analytics:  anCheck.checked
+    }));
+    savedMsg.style.display = 'block';
+    setTimeout(function(){ savedMsg.style.display = 'none'; }, 3000);
+  });
+})();
+</script>
+
+</body>
+</html>
